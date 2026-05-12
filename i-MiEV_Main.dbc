@@ -1,0 +1,92 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: BMU EVECU
+
+
+BO_ 883 BMU_Voltage_Current: 8 BMU
+ SG_ cellMaxVoltage : 7|8@0+ (0.01,2.1) [0|0] "V" Vector__XXX
+ SG_ cellMinVoltage : 15|8@0+ (0.01,2.1) [0|0] "V" Vector__XXX
+ SG_ packCurrent : 23|16@0- (0.01,-327.68) [0|0] "A" Vector__XXX
+ SG_ packVoltage : 39|16@0+ (0.1,0) [0|0] "V" Vector__XXX
+
+BO_ 884 BMU_SoC_Temp: 8 BMU
+ SG_ SoC_Display : 7|8@0+ (0.5,5) [0|100] "%" Vector__XXX
+ SG_ SoC_Control : 15|8@0+ (0.5,0) [0|100] "%" Vector__XXX
+ SG_ cellMaxTemp : 39|8@0+ (1,-50) [0|0] "degC" Vector__XXX
+ SG_ cellMinTemp : 47|8@0+ (1,-50) [0|0] "degC" Vector__XXX
+ SG_ packMaxCapacity : 55|8@0+ (0.5,0) [0|0] "Ah" Vector__XXX
+
+BO_ 1048 EVECU_Gear: 7 EVECU
+ SG_ Gear : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1761 BMU_FullCMUData1: 8 BMU
+ SG_ cmuID : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ unknownByte1 : 15|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ tempSensor1 : 23|8@0+ (1,-50) [0|0] "degC" Vector__XXX
+ SG_ tempSensor2 : 31|8@0+ (1,-50) [0|0] "degC" Vector__XXX
+ SG_ cellAVoltage : 39|16@0+ (0.005,2.1) [0|0] "V" Vector__XXX
+ SG_ cellBVoltage : 55|16@0+ (0.005,2.1) [0|0] "V" Vector__XXX
+
+BO_ 1762 BMU_FullCMUData2: 8 BMU
+ SG_ cmuID : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ tempSensor3 : 15|8@0+ (1,-50) [0|0] "degC" Vector__XXX
+ SG_ tempSensor4 : 23|8@0+ (1,-50) [0|0] "degC" Vector__XXX
+ SG_ unknownByte3 : 31|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ cellCVoltage : 39|16@0+ (0.005,2.1) [0|0] "V" Vector__XXX
+ SG_ cellDVoltage : 55|16@0+ (0.005,2.1) [0|0] "V" Vector__XXX
+
+BO_ 1763 BMU_FullCMUData3: 8 BMU
+ SG_ cmuID : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ tempSensor5 : 15|8@0+ (1,-50) [0|0] "degC" Vector__XXX
+ SG_ tempSensor6 : 23|8@0+ (1,-50) [0|0] "degC" Vector__XXX
+ SG_ unknownByte3 : 31|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ cellEVoltage : 39|16@0+ (0.005,2.1) [0|0] "V" Vector__XXX
+ SG_ cellFVoltage : 55|16@0+ (0.005,2.1) [0|0] "V" Vector__XXX
+
+BO_ 1764 BMU_FullCMUData4: 8 BMU
+ SG_ cmuID : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ unknownByte1 : 15|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ unknownByte2 : 23|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ unknownByte3 : 31|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ cellGVoltage : 39|16@0+ (0.005,2.1) [0|0] "V" Vector__XXX
+ SG_ cellHVoltage : 55|16@0+ (0.005,2.1) [0|0] "V" Vector__XXX
+
+
+
+CM_ BO_ 1763 "All bytes are 00 for CMU IDs 6 and 12 as these have 4 cells";
+CM_ BO_ 1764 "All bytes are 00 for CMU IDs 6 and 12 as these have 4 cells";
+VAL_ 1048 Gear 80 "P" 82 "R" 78 "N" 68 "D" 131 "B" 50 "C" ;
+
